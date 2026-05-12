@@ -45,31 +45,3 @@ Este diretório contém a implementação do cliente para registro e recebimento
 
 * `index.html`: Interface principal que solicita permissão de notificação e gera o token do dispositivo.
 * `firebase-messaging-sw.js`: Service Worker responsável por processar as mensagens em segundo plano.
-
-## ⚙️ Frontend
-
-Para que o frontend funcione, você deve configurar suas credenciais do Firebase em **ambos** os arquivos (`index.html` e `firebase-messaging-sw.js`):
-
-1.  Acesse o [Firebase Console](https://console.firebase.google.com/).
-2.  No seu projeto, vá em **Configurações do Projeto > Geral > Seus aplicativos**.
-3.  Copie o objeto `firebaseConfig` e substitua nos arquivos:
-    * `apiKey`
-    * `projectId`
-    * `messagingSenderId`
-    * `appId`
-4.  No `index.html`, substitua a `SUA_VAPIDKEY` pela chave gerada em **Configurações do Projeto > Cloud Messaging > Configuração da Web**.
-
-## 🚀 Como Executar
-
-> [!IMPORTANT]
-> **Atenção:** Devido a restrições de segurança do navegador (CORS e Service Workers), você **DEVE utilizar o Live Server** ou outro servidor local. Abrir o arquivo `index.html` diretamente (via `file://`) impedirá a geração do token.
-
-1.  Abra a pasta `frontend` no VS Code.
-2.  Clique com o botão direito no arquivo `index.html`.
-3.  Selecione **Open with Live Server**.
-4.  No navegador, aceite a permissão para exibir notificações.
-5.  Pressione **F12** para abrir o Console do Desenvolvedor.
-6.  Copie o **Token** exibido no log para utilizar no disparo via backend.
-
-## 💡 Observações
-* Certifique-se de que o arquivo `firebase-messaging-sw.js` está no mesmo nível do `index.html` na raiz do seu servidor local para que o registro do Service Worker ocorra com sucesso.
